@@ -52,7 +52,7 @@
     })
     const check_start = async(student_data)=>{
         try {
-            const resp = await fetch("process.env.URL/check", {
+            const resp = await fetch(process.env.URL+"/check", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(student_data),
@@ -63,7 +63,7 @@
             if (result.success) {
                 console.log(result.data);
                 alert(result.data);
-                window.location.href = "http://127.0.0.1:5500/after.html"
+                //window.location.href = process.env."/after.html"
 
             } 
         } catch (error) {
